@@ -1,58 +1,5 @@
-django:
+author:  xusx001
 
-在虚拟环境中先安装jango:
-pip install django==3.2.12
-
-django-admin startproject site
-
-python manage.py runserver 0.0.0.0:5000
-
-python manage.py startapp   创建应用
-python manage.py migrate    数据库迁移
-
-python manage.py 			列出子命令
-
-
-pycharm创建django-3.2.12项目:
-	需要修改的地方(配置文件setting.py):
-	  数据库的连接:
-	  允许浏览器访问的地址:
-	  语言:
-	  时区:
-	
-    1丶创建页面连接:
-    urls.py文件:
-	  path:
-	  init, str
-	  
-	  from django.urls import path, re_path
-	  
-	2丶创建视图文件(views.py):
-	  import django.http from HttpResponse
-	
-  
-	3丶Django中的请求
-		path_info: URL字符串
-		method: 字符串, 表示HTTP去那个球方法, 常用值: GET POST
-		GET: QueryDict查询字典对象, 包含get请求方式的所以数据
-		POST: QueryDict查询字典对象, 包含post请求方式的所以数据(form表单使用, 专门用来提交数据)
-		FILES: 类似于字典的对象, 包含所有的上传文件信息
-		COOKIES: Python字典, 包含所有cookie, 键和值都为字符串
-		seeion: 类似字典的对象, 表示当前的会话
-		body: 字符串, 请求请求体的内容(POST或者PUT)
-		scheme: 请求协议('http'/'https')
-		request.get_full_path():请求的丸子路径
-		request.META: 请求的元数据(消息头)
-			- request.META['REMOTH_ADDR']: 客户端IP地址
-			
-	
-	4丶无论是GET还是POST, 统一都由视图函数接收请求, 通过判断request.method区分具体的请求动作
-		if request.method == 'GET':
-			处理GET请求时的业务逻辑
-		elif request.method == 'POST':
-			处理POST请求的业务逻辑
-		else:
-			其他请求业务逻辑
 			
 			
 	5丶MVC代表Model-View-Controller (模型-实体-控制器) 模式  --> MTV
